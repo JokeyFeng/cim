@@ -24,7 +24,7 @@ public class Application implements CommandLineRunner{
 	private AppConfiguration appConfiguration ;
 
 	@Autowired
-	private static ZKit zkUtil ;
+	private static ZKit zkUtil;
 
 	public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -38,6 +38,6 @@ public class Application implements CommandLineRunner{
 		String addr = InetAddress.getLocalHost().getHostAddress();
 		Thread thread = new Thread(new RegistryZK(addr, appConfiguration.getPort()));
 		thread.setName("registry-zk");
-		//thread.start() ;
+		thread.start() ;
 	}
 }

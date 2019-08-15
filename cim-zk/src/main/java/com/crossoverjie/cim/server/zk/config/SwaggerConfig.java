@@ -15,7 +15,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 /** 是否打开swagger **/
-@ConditionalOnExpression("'${swagger.enable}' == 'true'")
+@ConditionalOnExpression("'" +
+        "${swagger.enable}' == 'true'")
 public class SwaggerConfig {
 	
     
